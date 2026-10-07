@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DJWork's — Digital art & templates</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#5aa9e6;--cloud:#2c3a52;--powder:#202b40;--gray:#161d2b;--white:#fff;--ink:#e8f0fa;--soft:#9fb2c8;--line:#34445e;--shadow:0 10px 30px rgba(0,0,0,.45);--bg:#161d2b;--card:#232e44;--bolt:#ffd84a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 'DM Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',sans-serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.4rem,7vw,4.2rem)}h2{font-size:clamp(1.7rem,4vw,2.4rem)}
+a{color:inherit}img{max-width:100%;display:block}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+.btn{display:inline-block;border:0;border-radius:999px;padding:12px 24px;font:700 .95rem 'DM Sans',sans-serif;cursor:pointer;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.btn-main{background:var(--bolt);color:#1a2233;box-shadow:0 6px 18px rgba(255,216,74,.3)}
+.btn-soft{background:var(--cloud);color:var(--ink)}
+.btn-sm{padding:8px 16px;font-size:.85rem}
+:focus-visible{outline:3px solid var(--bolt);outline-offset:2px}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{font:700 1.3rem 'Bricolage Grotesque',sans-serif;text-decoration:none}
+.nav nav{display:flex;gap:20px;align-items:center}
+.nav nav a{text-decoration:none;color:var(--soft);font-weight:500}.nav nav a:hover{color:var(--ink)}
+.bag{position:relative}
+.bag b{position:absolute;top:-6px;right:-6px;background:var(--bolt);color:#1a2233;border-radius:99px;font-size:.7rem;min-width:20px;height:20px;display:grid;place-items:center}
+@media(max-width:620px){.nav nav a.hide{display:none}}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#0e1420,#223149 70%,var(--bg));padding:72px 0 96px}.hero .wrap{position:relative;z-index:2}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero p{color:var(--soft);max-width:46ch;font-size:1.1rem}
+.cloud{position:absolute;background:#3a4964;border-radius:99px;opacity:.85;filter:blur(2px)}
+.cloud::before,.cloud::after{content:"";position:absolute;background:#3a4964;border-radius:50%}
+.c1{width:220px;height:60px;top:40px;right:6%}.c1::before{width:90px;height:90px;left:30px;top:-40px}.c1::after{width:70px;height:70px;left:110px;top:-28px}
+.c2{width:160px;height:44px;bottom:50px;left:4%}.c2::before{width:64px;height:64px;left:20px;top:-30px}.c2::after{width:50px;height:50px;left:80px;top:-20px}
+.mock{position:relative;height:340px}
+.mock img{position:absolute;border-radius:16px;box-shadow:var(--shadow);border:6px solid var(--cloud)}
+.mock img:nth-child(1){width:48%;left:2%;top:10px;transform:rotate(-6deg)}
+.mock img:nth-child(2){width:52%;right:0;top:50px;transform:rotate(5deg);z-index:2}
+.mock img:nth-child(3){width:40%;left:24%;bottom:0;transform:rotate(-2deg);z-index:3}
+.mock img{animation:float 6s ease-in-out infinite}.mock img:nth-child(2){animation-delay:-2s}.mock img:nth-child(3){animation-delay:-4s}
+@keyframes float{50%{translate:0 -10px}}
+.rain,.flash{position:absolute;inset:0;pointer-events:none;z-index:1}
+.rain{background:repeating-linear-gradient(100deg,transparent 0 18px,rgba(170,210,255,.35) 18px 19px) 0 0/120px 120px,repeating-linear-gradient(100deg,transparent 0 31px,rgba(170,210,255,.22) 31px 32px) 0 0/170px 170px;animation:rain .6s linear infinite}
+@keyframes rain{to{background-position:-30px 120px,-42px 170px}}
+.flash{background:radial-gradient(circle at 70% 0,rgba(255,244,190,.75),rgba(255,255,255,.12) 55%,transparent 75%);opacity:0;animation:flash 7s infinite}
+@keyframes flash{0%,60%,64%,68%,100%{opacity:0}62%{opacity:1}66%{opacity:.6}}
+@media(prefers-reduced-motion:reduce){.mock img,.rain,.flash{animation:none}html{scroll-behavior:auto}}
+@media(max-width:800px){.hero .wrap{grid-template-columns:1fr}.mock{height:280px}}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.card{background:var(--card);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.card img{aspect-ratio:4/5;width:100%;object-fit:cover;cursor:pointer}
+.card .body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:1.1rem;margin:0}
+.card p{margin:0;color:var(--soft);font-size:.9rem;flex:1}
+.tag{align-self:flex-start;background:var(--powder);color:var(--soft);border-radius:99px;padding:2px 12px;font-size:.78rem}
+.price{font:700 1.2rem 'Bricolage Grotesque',sans-serif}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 28px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:8px 16px;cursor:pointer;font:500 .9rem 'DM Sans',sans-serif}
+.chip.on{background:var(--bolt);color:#1a2233;border-color:var(--bolt)}
+.alt{background:var(--powder)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.box{background:var(--card);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+.box h3{font-size:1.15rem}.box p{margin:0;color:var(--soft)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about .avatar{aspect-ratio:1;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:linear-gradient(140deg,var(--sky),var(--cloud));display:grid;place-items:center;font:700 3.5rem 'Bricolage Grotesque',sans-serif;color:var(--bolt);max-width:320px;width:100%;margin:auto}
+@media(max-width:700px){.about{grid-template-columns:1fr}}
+.contact a{color:var(--bolt);font-weight:700}
+.pd{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:40px 0}
+.pd>img{border-radius:24px;box-shadow:var(--shadow);width:100%}
+.pd ul{padding-left:20px;color:var(--soft)}
+.note{background:var(--powder);border-radius:14px;padding:14px 16px;color:var(--soft);font-size:.92rem;margin:16px 0}
+@media(max-width:760px){.pd{grid-template-columns:1fr}}
+.co{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;padding:40px 0}
+@media(max-width:800px){.co{grid-template-columns:1fr}}
+label{display:block;font-weight:500;margin:12px 0 4px}
+input[type=text],input[type=email]{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit}
+.pay{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:8px 0;cursor:pointer;background:var(--card)}
+.pay small{margin-left:auto;color:var(--soft)}
+.pay:has(input:checked){border-color:var(--bolt);background:var(--powder)}
+.line{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line)}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(380px,100%);background:var(--bg);z-index:40;transform:translateX(105%);transition:transform .3s;box-shadow:-10px 0 30px rgba(0,0,0,.2);padding:20px;padding-top:calc(20px + env(safe-area-inset-top,0px));padding-bottom:calc(20px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column}
+.drawer.open{transform:none}
+.scrim{position:fixed;inset:0;background:rgba(20,40,70,.35);z-index:30;display:none}.scrim.open{display:block}
+.items{flex:1;overflow:auto}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));translate:-50% 20px;background:var(--bolt);color:#1a2233;padding:10px 20px;border-radius:99px;opacity:0;transition:.3s;z-index:50;pointer-events:none}
+.toast.show{opacity:1;translate:-50% 0}
+footer{background:var(--cloud);padding:40px 0 calc(24px + env(safe-area-inset-bottom,0px))}
+footer .cols{margin-bottom:20px}footer a{display:block;text-decoration:none;color:var(--soft)}footer a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="#home">DJWork's</a>
+  <nav>
+    <a href="#home" class="hide">Home</a><a href="#shop">Shop</a>
+    <a href="#about" data-sec class="hide">About</a><a href="#contact" data-sec class="hide">Contact</a>
+    <button class="btn btn-soft btn-sm bag" id="bagBtn" aria-label="Open bag">Bag <b id="count">0</b></button>
+  </nav>
+</div></header>
+
+<main id="app"></main>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><h3>DJWork's</h3><p style="color:var(--soft);margin:0">Original digital art and templates.</p></div>
+    <div><a href="#home">Home</a><a href="#shop">Shop</a><a href="#about" data-sec>About</a><a href="#contact" data-sec>Contact</a></div>
+    <div><a href="mailto:denverjaud054@gmail.com">denverjaud054@gmail.com</a><a href="tel:+639813317451">+63 9813317451</a></div>
+  </div>
+  <small style="color:var(--soft)">© <span id="yr"></span> DJWork's. All rights reserved.</small>
+</div></footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping bag">
+  <div class="line" style="border:0"><h3 style="margin:0">Your bag</h3><button class="btn btn-soft btn-sm" id="closeBag">Close</button></div>
+  <div class="items" id="items"></div>
+  <div class="line"><b>Total</b><b id="total">₱0</b></div>
+  <button class="btn btn-main" id="goCheckout" style="margin-top:12px">Go to checkout</button>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============ 1. EDIT YOUR SHOP INFO HERE ============ */
+const CONTACT = { phone: "+63 9813317451", email: "denverjaud054@gmail.com" };
+
+const CATEGORIES = ["Canva Templates","Posters","Social Media Templates","Planners","Business Templates","Digital Artwork"];
+
+/* To use your own artwork, put your file path or link in "image" (e.g. "images/poster1.jpg").
+   Leave image as "" to show the storm placeholder. */
+const PRODUCTS = [
+  { id:1, name:"Storm Sky Instagram Pack", category:"Social Media Templates", price:249, image:"", color:"#8ec5f0",
+    desc:"10 editable Instagram post templates in moody storm tones.",
+    includes:["10 Canva post templates","Fonts guide","Color palette"], type:"Canva template" },
+  { id:2, name:"Stormy Night Poster", category:"Posters", price:199, image:"", color:"#b9dcf7",
+    desc:"A moody thunderstorm poster, ready to print in A3 or A4.",
+    includes:["High-resolution PNG","A3 and A4 print sizes"], type:"digital download" },
+  { id:3, name:"Weekly Planner Sheets", category:"Planners", price:149, image:"", color:"#a6d0f2",
+    desc:"Printable weekly planner pages for students and creators.",
+    includes:["12 planner pages","PDF file","Letter and A4 sizes"], type:"digital download" },
+  { id:4, name:"Small Business Brand Kit", category:"Business Templates", price:499, image:"", color:"#7fb9ea",
+    desc:"Editable logo cards, price lists and thank-you cards.",
+    includes:["8 Canva templates","Price list layout","Thank-you card"], type:"Canva template" },
+  { id:5, name:"Thunder Study Planner", category:"Planners", price:179, image:"", color:"#c6e2f8",
+    desc:"A study schedule and goal tracker for the school year.",
+    includes:["Study schedule","Goal tracker","Printable PDF"], type:"digital download" },
+  { id:6, name:"Lightning Sky Art Print", category:"Digital Artwork", price:229, image:"", color:"#9ccbf0",
+    desc:"Original digital artwork in stormy blue gradients.",
+    includes:["Print-ready JPG","3 aspect ratios"], type:"digital download" },
+  { id:7, name:"Canva Story Templates", category:"Canva Templates", price:199, image:"", color:"#b2d8f5",
+    desc:"Editable story layouts for announcements and promos.",
+    includes:["8 story templates","Canva link"], type:"Canva template" },
+  { id:8, name:"Hello Monday Poster", category:"Posters", price:179, image:"", color:"#8cc2ee",
+    desc:"A bright motivational poster for desks and walls.",
+    includes:["High-resolution PNG","A4 print size"], type:"digital download" }
+];
+/* ============ END OF EDITABLE AREA ============ */
+
+const peso = n => "₱" + n.toLocaleString("en-PH");
+const $ = s => document.querySelector(s);
+let cart = [];       // list of product ids (each digital product is bought once)
+let filter = "All";
+
+// Placeholder image: swap by setting "image" on a product above
+function img(p){
+  if(p.image) return p.image;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e1420"/><stop offset="1" stop-color="#3b5578"/></linearGradient></defs><rect width="400" height="500" fill="url(#g)"/><rect y="320" width="400" height="180" fill="${p.color}" opacity=".18"/><g stroke="#aad2ff" stroke-width="2" opacity=".35">${Array.from({length:18},(_, i)=>`<line x1="${i*24+8}" y1="${(i*53)%200+160}" x2="${i*24-6}" y2="${(i*53)%200+195}"/>`).join("")}</g><polygon points="215,170 150,300 200,300 175,400 260,262 210,262" fill="#ffd84a"/><text x="200" y="110" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="700" fill="#e8f0fa">${p.name}</text><text x="200" y="450" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#e8f0fa" opacity=".6">Placeholder · replace me</text></svg>`;
+  return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+}
+
+function card(p){
+  return `<article class="card">
+    <img src="${img(p)}" alt="${p.name} preview" onclick="location.hash='product/${p.id}'">
+    <div class="body"><span class="tag">${p.category}</span><h3>${p.name}</h3><p>${p.desc}</p>
+    <div class="price">${peso(p.price)}</div>
+    <div class="row"><a class="btn btn-soft btn-sm" href="#product/${p.id}">View Product</a>
+    <button class="btn btn-main btn-sm" onclick="buyNow(${p.id})">Buy Now</button></div></div></article>`;
+}
+
+/* ---------- Pages ---------- */
+function home(){
+  return `<section class="hero" id="top"><div class="cloud c1"></div><div class="cloud c2"></div><div class="rain"></div><div class="flash"></div>
+  <div class="wrap"><div>
+    <h1>DJWork's</h1>
+    <h2 style="font-weight:500">Creative designs made to bring your ideas to life.</h2>
+    <p>Hi, I'm a rookie graphic designer selling original digital artwork, Canva templates, posters and planners. Every design is made by me, one at a time.</p>
+    <a class="btn btn-main" href="#shop">Shop My Designs</a>
+  </div>
+  <div class="mock">${PRODUCTS.slice(1,4).map(p=>`<img src="${img(p)}" alt="">`).join("")}</div></div></section>
+
+  <section><div class="wrap"><h2>Featured designs</h2><div class="grid">${PRODUCTS.slice(0,4).map(card).join("")}</div>
+  <p style="margin-top:28px"><a class="btn btn-soft" href="#shop">See all designs</a></p></div></section>
+
+  <section class="alt" id="about"><div class="wrap about">
+    <div class="avatar" aria-hidden="true">DJ</div>
+    <div><h2>About DJWork's</h2>
+    <p>DJWork's is made by a rookie graphic designer who enjoys creating clean, creative and useful designs. My work is for creators, students, small businesses, and anyone who wants beautiful digital artwork.</p>
+    <p style="color:var(--soft)">I'm still learning, and every new design is a chance to get better. Thank you for supporting a small creative studio.</p></div></div></section>
+
+  <section><div class="wrap"><h2>Why choose my designs</h2><div class="cols">
+    <div class="box"><h3>Original work</h3><p>Every design is created by me, never copied.</p></div>
+    <div class="box"><h3>Easy to edit</h3><p>Canva templates you can customize in minutes.</p></div>
+    <div class="box"><h3>Instant use</h3><p>Digital files, so nothing to ship and no waiting.</p></div>
+    <div class="box"><h3>Fair prices</h3><p>Affordable pricing in Philippine pesos.</p></div></div></div></section>
+
+  <section class="alt"><div class="wrap"><h2>How it works</h2><div class="cols">
+    <div class="box"><h3>1. Pick a design</h3><p>Browse the shop and open any product.</p></div>
+    <div class="box"><h3>2. Check out</h3><p>Add to your bag and send your order details.</p></div>
+    <div class="box"><h3>3. Get your files</h3><p>Receive your download or Canva template link.</p></div></div></div></section>
+
+  <section id="contact"><div class="wrap contact"><h2>Contact</h2>
+    <p>Questions about a design or a custom order? Get in touch.</p>
+    <p>Phone: <a href="tel:+639813317451">${CONTACT.phone}</a><br>Email: <a href="mailto:${CONTACT.email}">${CONTACT.email}</a></p></div></section>`;
+}
+
+function shop(){
+  const list = PRODUCTS.filter(p => filter==="All" || p.category===filter);
+  return `<section><div class="wrap"><h1 style="font-size:clamp(2rem,5vw,3rem)">Shop</h1>
+  <div class="filters">${["All",...CATEGORIES].map(c=>`<button class="chip ${c===filter?"on":""}" onclick="setFilter('${c}')">${c}</button>`).join("")}</div>
+  <div class="grid">${list.map(card).join("") || "<p>No designs in this category yet. Check back soon.</p>"}</div></div></section>`;
+}
+
+function product(id){
+  const p = PRODUCTS.find(x=>x.id==id);
+  if(!p) return `<section><div class="wrap"><h2>Design not found</h2><a class="btn btn-main" href="#shop">Back to shop</a></div></section>`;
+  const how = p.type==="Canva template" ? "This is a Canva template. After your order is confirmed you'll receive a link to open and edit it in Canva (a free Canva account works)." : "This is a digital download. After your order is confirmed you'll receive the files by email. Nothing is shipped.";
+  return `<div class="wrap pd"><img src="${img(p)}" alt="${p.name} preview">
+  <div><a href="#shop" style="color:var(--soft)">‹ Back to shop</a><br><span class="tag" style="margin-top:12px">${p.category}</span>
+  <h1 style="font-size:2.4rem;margin-top:8px">${p.name}</h1><div class="price" style="font-size:1.7rem">${peso(p.price)}</div>
+  <p>${p.desc}</p><h3>What's included</h3><ul>${p.includes.map(i=>`<li>${i}</li>`).join("")}</ul>
+  <div class="note">${how}</div>
+  <div class="row"><button class="btn btn-main" onclick="buyNow(${p.id})">Buy Now</button>
+  <button class="btn btn-soft" onclick="addCart(${p.id})">Add to bag</button></div></div></div>`;
+}
+
+function checkout(){
+  if(!cart.length) return `<section><div class="wrap"><h2>Your bag is empty</h2><p>Pick a design to get started.</p><a class="btn btn-main" href="#shop">Browse the shop</a></div></section>`;
+  const items = cart.map(id=>PRODUCTS.find(p=>p.id==id));
+  const t = items.reduce((s,p)=>s+p.price,0);
+  return `<div class="wrap co"><div><h1 style="font-size:2.2rem">Checkout</h1>
+  <label for="nm">Full name</label><input type="text" id="nm" autocomplete="name">
+  <label for="em">Email for your files</label><input type="email" id="em" autocomplete="email">
+  <h3 style="margin-top:24px">Payment method</h3>
+  ${["GCash","Maya","Bank Transfer","Other (to be added)"].map((m,i)=>`<label class="pay"><input type="radio" name="pm" value="${m}" ${i==0?"checked":""}> ${m} <small>Not connected yet</small></label>`).join("")}
+  <div class="note"><b>Payments are not live yet.</b> No money is taken on this page. Your order is sent to me as an email request, and I'll reply with payment steps for your chosen method. Payment gateways can be connected in the code later (see <code>placeOrder()</code>).</div>
+  <button class="btn btn-main" onclick="placeOrder()">Send order request</button></div>
+  <div class="box" style="align-self:start"><h3>Order summary</h3>
+  ${items.map(p=>`<div class="line"><span>${p.name}</span><span>${peso(p.price)}</span></div>`).join("")}
+  <div class="line" style="border:0"><b>Total</b><b>${peso(t)}</b></div></div></div>`;
+}
+
+/* ---------- Router ---------- */
+function route(){
+  const h = location.hash.slice(1) || "home";
+  const [page,arg] = h.split("/");
+  const app = $("#app");
+  if(page==="shop") app.innerHTML = shop();
+  else if(page==="product") app.innerHTML = product(arg);
+  else if(page==="checkout") app.innerHTML = checkout();
+  else { app.innerHTML = home(); if(["about","contact"].includes(page)) setTimeout(()=>document.getElementById(page)?.scrollIntoView(),0); else window.scrollTo(0,0); return; }
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);
+// About/Contact links live on the home page
+document.querySelectorAll("[data-sec]").forEach(a=>a.addEventListener("click",e=>{
+  const id=a.getAttribute("href").slice(1);
+  if(!document.getElementById(id)){return}
+  e.preventDefault();document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}));
+
+/* ---------- Cart ---------- */
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("show"),1800)}
+function addCart(id){ if(cart.includes(id)) return toast("Already in your bag"); cart.push(id); renderCart(); toast("Added to bag"); }
+function buyNow(id){ if(!cart.includes(id)) cart.push(id); renderCart(); location.hash="checkout"; }
+function removeCart(id){ cart=cart.filter(x=>x!==id); renderCart(); if(location.hash==="#checkout") route(); }
+function renderCart(){
+  $("#count").textContent = cart.length;
+  const items = cart.map(id=>PRODUCTS.find(p=>p.id==id));
+  $("#items").innerHTML = items.length ? items.map(p=>`<div class="line"><span>${p.name}<br><small style="color:var(--soft)">${peso(p.price)}</small></span><button class="btn btn-soft btn-sm" onclick="removeCart(${p.id})">Remove</button></div>`).join("") : `<p style="color:var(--soft)">Your bag is empty. Add a design from the shop.</p>`;
+  $("#total").textContent = peso(items.reduce((s,p)=>s+p.price,0));
+}
+function bag(open){ $("#drawer").classList.toggle("open",open); $("#scrim").classList.toggle("open",open); }
+$("#bagBtn").onclick=()=>bag(true); $("#closeBag").onclick=()=>bag(false); $("#scrim").onclick=()=>bag(false);
+$("#goCheckout").onclick=()=>{bag(false);location.hash="checkout";route()};
+
+function setFilter(c){ filter=c; route(); }
+
+/* ---------- Order (no real payment) ---------- */
+function placeOrder(){
+  const name=$("#nm").value.trim(), email=$("#em").value.trim();
+  if(!name||!email) return toast("Please enter your name and email");
+  const method=document.querySelector("input[name=pm]:checked").value;
+  const items=cart.map(id=>PRODUCTS.find(p=>p.id==id));
+  const total=items.reduce((s,p)=>s+p.price,0);
+  /* FUTURE: replace this email request with your payment gateway call (GCash, Maya, PayMongo, etc.). */
+  const body=`Hi DJWork's,\n\nI'd like to order:\n${items.map(p=>`- ${p.name} (${peso(p.price)})`).join("\n")}\n\nTotal: ${peso(total)}\nPayment method: ${method}\nName: ${name}\nEmail: ${email}`;
+  location.href=`mailto:${CONTACT.email}?subject=${encodeURIComponent("Order request")}&body=${encodeURIComponent(body)}`;
+}
+
+$("#yr").textContent=new Date().getFullYear();
+renderCart(); route();
+</script>
+</body>
+</html>
